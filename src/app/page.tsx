@@ -7,11 +7,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import Typing from "../../components/Typing";
+
 // import { title } from "process";
 export default function Home() {
   const zoomImgRef = useRef(null);
   const zoomImg2Ref = useRef(null);
   const zoomImg3Ref = useRef(null);
+  const zoomImg13Ref = useRef(null);
+  const zoomImg14Ref = useRef(null);
   // const Image=[
   //   {
   //     title:"Books Published",
@@ -66,6 +69,38 @@ export default function Home() {
             trigger: zoomImg3Ref.current,
             start: "top 20%",
             end: "bottom 60%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    if (zoomImg13Ref.current) {
+      gsap.fromTo(
+        zoomImg13Ref.current,
+        { scale: 1 },
+        {
+          scale: 1.2,
+          scrollTrigger: {
+            trigger: zoomImg13Ref.current,
+            start: "top 20%",
+            end: "bottom 20%",
+            scrub: true,
+          },
+        }
+      );
+    }
+
+    if (zoomImg14Ref.current) {
+      gsap.fromTo(
+        zoomImg14Ref.current,
+        { scale: 1 },
+        {
+          scale: 1.2,
+          scrollTrigger: {
+            trigger: zoomImg14Ref.current,
+            start: "top 60%",
+            end: "bottom 20%",
             scrub: true,
           },
         }
@@ -275,7 +310,7 @@ export default function Home() {
               src="/img2.jfif"
               alt="img"
               width={600}
-              height={790}
+              height={390}
               ref={zoomImg2Ref}
               className="zoom-img2"
               style={{ maxWidth: "50%", height: "auto", objectFit: "cover" }}
@@ -341,316 +376,416 @@ export default function Home() {
         </div>
       </section>
       {/* section8... */}
-      {/* <section className="flex justify-center mt-10 gap-20"> */}
-      {/* <div> */}
-      {/* <div className="flex justify-around flex-col items-start mt-3 gap-5">
-            <div className="relative">
-              <div className="group relative">
-                <div className="cursor-pointer">
-                  <hr className="border-t-2 border-gray-500" />
-                </div>
-              </div>
-              <div className="flex  gap-28 w-[1000px] mt-5 justify-around">
-                <div className="flex gap-16 "> */}
-      {/* <div className="hidden group-hover:block  p-2 shadow-lg">
-                    <Image
-                      src="/img8.jfif"
-                      alt="img"
-                      width={200}
-                      height={300}
-                    />
-                  </div> */}
-      {/* <div>
-                    <p className="font-play text-[28px]">01</p>
+      <section className="flex justify-around mt-4 w-full items-start">
+        <div className="font-play font-medium text-[42px]">
+          Books <br /> Published
+        </div>
+        <div className=" flex flex-col items-center justify-center gap-10">
+          <div data-aos="fade-up">
+            {" "}
+            <hr className="border-t-2 border-gray-200 w-full mt-2" />
+            <div className="relative flex flex-col items-center justify-center   ">
+              <div className="group flex flex-col gap-6 text-center ">
+                <div className="flex  gap-28 w-[1200px]  mt-5 justify-around">
+                  <div className="flex gap-16 -ml-[170px]">
+                    <hr className="border-t-2 border-gray-500" />
+                    <div>
+                      <p className="font-play text-[28px]">01</p>
+                    </div>
+                    <div className="flex flex-col gap-5 items-start">
+                      <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
+                        Message in Movements
+                      </p>
+                      <div data-aos="fade-right">
+                        <hr className="border border-red-300 w-[210px] -mt-5" />
+                      </div>
+                      <p className="font-play font-semibold text-[20px] -mt-5">
+                        (2008)
+                      </p>
+                    </div>
                   </div>
                   <div className="flex flex-col gap-5">
-                    <p className="font-play font-semibold text-[20px]">
-                      Message in Movements
+                    <p className="font-play font-semibold text-[14px] text-gray-500">
+                      Essence of Bharatanātyam
                     </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2008)
+                    <p className="font-play font-semibold text-[18px]">
+                      Samata Books, Chennai
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    Essence of Bharatanātyam
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    Samata Books, Chennai
-                  </p>
+
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img8.jfif"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={120}
+                    height={250}
+                  />
                 </div>
               </div>
-            </div> */}
-      {/* <div className="flex gap-16 ">
-          <div>
-            <p className="font-play text-[28px]">01</p>
+            </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <p className="font-play font-semibold text-[20px]">
-              Message in Movements
-            </p>
-            <p className="font-play font-semibold text-[20px]">(2008)</p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-5">
-          <p className="font-play font-semibold text-[14px] text-gray-500">
-            Essence of Bharatanātyam
-          </p>
-          <p className="font-play font-semibold text-[18px]">
-            Samata Books, Chennai
-          </p>
-        </div>
-        <div className="relative flex flex-col items-center justify-center min-h-screen  text-black">
-          <div className="group flex flex-col gap-6 text-center text-black"> */}
-      {/* // <p className="text-2xl cursor-pointer hover:text-cyan-300">
-                //   Hover over me to see an image!
-                // </p>
-                // <p className="text-2xl cursor-pointer hover:text-cyan-300">
-                //   Another hoverable paragraph!
-                // </p> */}
+          <div data-aos="fade-up">
+            {" "}
+            <hr className="border-t-2 border-gray-200 w-full mt-2" />
+            <div className="relative flex flex-col items-center justify-center   ">
+              <div className="group flex flex-col gap-6 text-center ">
+                <div className="flex  gap-28 w-[1200px] mt-5 justify-around">
+                  <div className="flex gap-16 -ml-[70px]">
+                    <div>
+                      <p className="font-play text-[28px]">02</p>
+                    </div>
+                    <div className="flex flex-col items-start gap-5">
+                      <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
+                        Message in Movements
+                      </p>
+                      <div data-aos="fade-right">
+                        <hr className="border border-red-300 w-[210px] -mt-5" />
+                      </div>
 
-      {/* <div className="absolute top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[300px]">
+                      <p className="font-play font-semibold text-[20px] -mt-5">
+                        (2013,2020, 2024)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <p className="font-play font-semibold text-[14px] text-gray-500">
+                      Abhinaya Darpanam, An Illustrated Translation
+                    </p>
+                    <p className="font-play font-semibold text-[18px]">
+                      B.R. Rhythms, New Delhi
+                    </p>
+                  </div>
+                </div>
+
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img9.jfif"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={120}
+                    height={250}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up">
+            {" "}
+            <hr className="border-t-2 border-gray-200 w-full mt-2" />
+            <div className="relative flex flex-col items-center justify-center   ">
+              <div className="group flex flex-col gap-6 text-center ">
+                <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
+                  <div className="flex gap-16 -ml-[60px]">
+                    <div>
+                      <p className="font-play text-[28px]">03</p>
+                    </div>
+                    <div className="flex flex-col items-start gap-5">
+                      <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
+                        Abhinaya Darpanam
+                      </p>
+                      <div data-aos="fade-right">
+                        <hr className="border border-red-300 w-[210px] -mt-5" />
+                      </div>
+                      <p className="font-play font-semibold text-[20px] -mt-5">
+                        (2021)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <p className="font-play font-semibold text-[14px] text-gray-500">
+                      Mudrā-s: Single Hand Gestures
+                    </p>
+                    <p className="font-play font-semibold text-[18px]">
+                      Vedathek Publishing House, Bangalore
+                    </p>
+                  </div>
+                </div>
+
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img10.jfif"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={120}
+                    height={250}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up">
+            {" "}
+            <hr className="border-t-2 border-gray-200 w-full mt-2" />
+            <div className="relative flex flex-col items-center justify-center   ">
+              <div className="group flex flex-col gap-6 text-center ">
+                <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
+                  <div className="flex gap-16 -ml-[120px]">
+                    <hr className="border-t-2 border-gray-500" />
+                    <div>
+                      <p className="font-play text-[28px]">04</p>
+                    </div>
+                    <div className="flex flex-col items-start gap-5">
+                      <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
+                        Hasta Mudrā-s
+                      </p>
+                      <div data-aos="fade-right">
+                        <hr className="border border-red-300 w-[210px] -mt-5" />
+                      </div>
+                      <p className="font-play font-semibold text-[20px] -mt-5">
+                        (2023)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <p className="font-play font-semibold text-[14px] text-gray-500">
+                      Hand Gestures of Indian Dance
+                    </p>
+                    <p className="font-play font-semibold text-[18px]">
+                      Vedathek Publishing House, Bangalore
+                    </p>
+                  </div>
+                </div>
+
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img11.jfif"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={120}
+                    height={250}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up">
+            {" "}
+            <hr className="border-t-2 border-gray-200 w-full mt-2" />
+            <div className="relative flex flex-col items-start justify-center   ">
+              <div className="group flex flex-col gap-6 text-start ">
+                <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
+                  <div className="flex gap-16 -ml-[95px]">
+                    <hr className="border-t-2 border-gray-500" />
+                    <div>
+                      <p className="font-play text-[28px]">05</p>
+                    </div>
+                    <div className="flex flex-col items-start gap-5">
+                      <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
+                        You Are Your Desires
+                      </p>
+                      <div data-aos="fade-right">
+                        <hr className="border border-red-300 w-[210px] -mt-5" />
+                      </div>
+                      <p className="font-play font-semibold text-[20px] -mt-5">
+                        (2024)
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <p className="font-play font-semibold text-[14px] text-gray-500">
+                      How An Ancient Indian wisdom template will help you tap
+                      into <br />
+                      your desires and shape your destiny
+                    </p>
+                    <p className="font-play font-semibold text-[18px]">
+                      Notion Press, Chennai
+                    </p>
+                  </div>
+                </div>
+
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img12.jfif"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={120}
+                    height={250}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* section9... */}
+      <section>
+        <div>
+          <div className="flex mt-60 justify-center items-end">
+            <div className=" relative  flex items-end h-auto">
               <Image
-                src="/img9.jfif"
-                alt="Hover Image"
-                className="w-64 h-auto rounded-lg shadow-lg"
-                width={200}
-                height={300}
+                src="/img13.jfif"
+                alt="img"
+                width={1200}
+                height={790}
+                ref={zoomImg13Ref}
+                className="zoom-img13"
+                style={{
+                  maxWidth: "50%",
+                  height: "auto",
+                  objectFit: "cover",
+                }}
               />
             </div>
-          </div>
-        </div> */}
-      {/* <div className="relative">
-              <div className="group relative">
-                <div className="cursor-pointer">
-                  <hr className="border-t-2 border-gray-500" />
-                </div>
-                <div className="absolute bottom-0 hidden group-hover:block  p-2 shadow-lg">
-                  <Image src="/img9.jfif" alt="img" width={200} height={300} />
-                </div>
+            <div className="max-w-[500px] -ml-[450px]">
+              <div data-aos="fade-left">
+                {" "}
+                <p className="font-play font-semibold text-[52px]">
+                  Performance <br /> & Dance Workshops
+                </p>
               </div>
-              <div className="flex  gap-28 w-[1000px] mt-5 justify-around">
-                <div className="flex gap-16">
-                  <div>
-                    <p className="font-play text-[28px]">02</p>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <p className="font-play font-semibold text-[20px]">
-                      Message in Movements
-                    </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2013,2020, 2024)
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    Abhinaya Darpanam, An Illustrated Translation
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    B.R. Rhythms, New Delhi
-                  </p>
+
+              <p className="font-play font-[300px] text-[16px]">
+                Practicing philosophical orchestration of body, mind and soul,
+                on a fruitful voyage in the vast sea of Bharatanatyam.
+              </p>
+              <div className="flex mt-16 gap-4 ">
+                <p className="font-play font-[300] text-[22px] hover:text-red-600">
+                  EXPLORE
+                </p>
+                <div className="mt-1">
+                  <Image
+                    src="/rightarrow.svg"
+                    alt="arrow"
+                    width={30}
+                    height={0}
+                  />
                 </div>
               </div>
             </div>
-          </div> */}
-      {/* </div>  */}
-      {/* </section> */}
-      <section className="flex justify-around mt-4 w-full">
-        <div className="font-play font-medium text-[28px]">Books Published</div>
-        <div>
-          <div className="relative flex flex-col items-center justify-center   ">
-            <div className="group flex flex-col gap-6 text-center ">
-              <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
-                <div className="flex gap-16">
-                  <hr className="border-t-2 border-gray-500" />
-                  <div>
-                    <p className="font-play text-[28px]">01</p>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
-                      Message in Movements
-                    </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2008)
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    Essence of Bharatanātyam
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    Samata Books, Chennai
-                  </p>
-                </div>
-              </div>
+          </div>
+        </div>
+      </section>
+      {/* section10... */}
+      <section>
+        <div className="flex mt-60 justify-center items-end gap-36 ml-[300px]">
+          <div className="max-w-[500px]">
+            <div data-aos="fade-left">
+              {" "}
+              <p className="font-play font-semibold text-[42px]">
+                Academic <br />
+                Presentations
+              </p>
+            </div>
 
-              <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[200px]">
+            <p className="font-play font-[300px] text-[16px]">
+              Navigating new horizons in Bharatanatyam, by presenting various
+              analyses through comparative studies.
+            </p>
+            <div className="flex mt-16 gap-4 ">
+              <p className="font-play font-[300] text-[22px] hover:text-red-600">
+                EXPLORE
+              </p>
+              <div className="mt-1">
                 <Image
-                  src="/img8.jfif"
-                  alt="Hover Image"
-                  className="w-64 h-auto rounded-lg shadow-lg"
-                  width={120}
-                  height={250}
+                  src="/rightarrow.svg"
+                  alt="arrow"
+                  width={30}
+                  height={0}
                 />
               </div>
             </div>
           </div>
-          <div className="relative flex flex-col items-center justify-center   ">
-            <div className="group flex flex-col gap-6 text-center ">
-              <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
-                <div className="flex gap-16">
-                  <div>
-                    <p className="font-play text-[28px]">02</p>
-                    <hr className="" />
-                  </div>
-                  <div className="flex flex-col items-start gap-5">
-                    <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
-                      Message in Movements
-                    </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2013,2020, 2024)
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    Abhinaya Darpanam, An Illustrated Translation
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    B.R. Rhythms, New Delhi
-                  </p>
-                </div>
-              </div>
+          <div className=" relative  flex items-end h-50%">
+            <Image
+              src="/img14.jfif"
+              alt="img"
+              width={960}
+              height={620}
+              ref={zoomImg14Ref}
+              className="zoom-img14"
+              style={{ maxWidth: "50%", height: "50%", objectFit: "cover" }}
+            />
+          </div>
+        </div>
+      </section>
+      {/* section11... */}
+      <section className="flex flex-col justify-center items-center">
+        <div className="flex justify-center mt-36 flex-col ">
+          <p className="font-play font-medium text-[42px] my-4">Blog</p>
+          <div className="relative flex flex-col items-center justify-center  ">
+            <div className="group flex flex-col gap-6  ">
+              <div className="flex  gap-28 w-[1200px]  mt-2 justify-around">
+                <div className="w-full text-start">
+                  <hr className="border-t-2 border-gray-200 " />
 
-              <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[200px]">
-                <Image
-                  src="/img9.jfif"
-                  alt="Hover Image"
-                  className="w-64 h-auto rounded-lg shadow-lg"
-                  width={120}
-                  height={250}
-                />
+                  <div className="flex gap-36 justify-start items-center my-10">
+                    <p className="font-play font-medium text-red-600 text-[24px]">
+                      February 15, 2025
+                    </p>
+                    <p className="font-play font-medium text-[32px]">
+                      Writing As Performance
+                    </p>
+                  </div>
+                </div>
+
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-60 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img15.jpg"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={270}
+                    height={320}
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div className="relative flex flex-col items-center justify-center   ">
             <div className="group flex flex-col gap-6 text-center ">
-              <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
-                <div className="flex gap-16">
-                  <hr className="border-t-2 border-gray-500" />
-                  <div>
-                    <p className="font-play text-[28px]">03</p>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
-                      Abhinaya Darpanam
+              <div className="flex  gap-28 w-[1200px]  mt-5 justify-around">
+                <div className=" w-full text-start ">
+                  <hr className=" border-gray-200  mb-10" />
+                  <div className="flex gap-36 my-10">
+                    <p className="font-play font-medium text-red-600 text-[24px]">
+                      January 31, 2025
                     </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2021)
+                    <p className="font-play font-medium text-[32px]">
+                      Transitioning from dancer to dance critic
                     </p>
                   </div>
+                  <hr className="border-t-2 border-gray-200  mt-20 " />
                 </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    Mudrā-s: Single Hand Gestures
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    Vedathek Publishing House, Bangalore
-                  </p>
-                </div>
-              </div>
 
-              <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[200px]">
-                <Image
-                  src="/img10.jfif"
-                  alt="Hover Image"
-                  className="w-64 h-auto rounded-lg shadow-lg"
-                  width={120}
-                  height={250}
-                />
+                <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-80 transition-opacity duration-500 -ml-[300px]">
+                  <Image
+                    src="/img16.jfif"
+                    alt="Hover Image"
+                    className="w-64 h-auto rounded-lg shadow-lg"
+                    width={270}
+                    height={320}
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div className="relative flex flex-col items-center justify-center   ">
-            <div className="group flex flex-col gap-6 text-center ">
-              <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
-                <div className="flex gap-16">
-                  <hr className="border-t-2 border-gray-500" />
-                  <div>
-                    <p className="font-play text-[28px]">04</p>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
-                      Hasta Mudrā-s
-                    </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2023)
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    Hand Gestures of Indian Dance
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    Vedathek Publishing House, Bangalore
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[200px]">
-                <Image
-                  src="/img11.jfif"
-                  alt="Hover Image"
-                  className="w-64 h-auto rounded-lg shadow-lg"
-                  width={120}
-                  height={250}
-                />
-              </div>
+          <div className="flex mt-16 gap-4 ">
+            <p className="font-play font-[300] text-[16px] hover:text-red-600">
+              View All
+            </p>
+            <div className="mt-1 ">
+              <Image src="/rightarrow.svg" alt="arrow" width={20} height={0} />
             </div>
           </div>
-          <div className="relative flex flex-col items-start justify-center   ">
-            <div className="group flex flex-col gap-6 text-start ">
-              <div className="flex  gap-28 w-[1200px] text-center mt-5 justify-around">
-                <div className="flex gap-16">
-                  <hr className="border-t-2 border-gray-500" />
-                  <div>
-                    <p className="font-play text-[28px]">05</p>
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <p className="font-play font-semibold text-[20px] hover:underline hover:underline-red-500">
-                      You Are Your Desires
-                    </p>
-                    <p className="font-play font-semibold text-[20px]">
-                      (2024)
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <p className="font-play font-semibold text-[14px] text-gray-500">
-                    How An Ancient Indian wisdom template will help you tap into{" "}
-                    <br />
-                    your desires and shape your destiny
-                  </p>
-                  <p className="font-play font-semibold text-[18px]">
-                    Notion Press, Chennai
-                  </p>
-                </div>
-              </div>
-
-              <div className="absolute top-20 transform -translate-y-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -ml-[200px]">
-                <Image
-                  src="/img12.jfif"
-                  alt="Hover Image"
-                  className="w-64 h-auto rounded-lg shadow-lg"
-                  width={120}
-                  height={250}
-                />
-              </div>
+        </div>
+      </section>
+      {/* section12... */}
+      <section>
+        <div className=" ">
+          <div className="flex items-start justify-start p-10  h-[500px] bg-gray-100 mt-10 flex-row">
+            <div className="relative flex flex-col items-center  justify-center mt-10">
+              {/* Vertical Text */}
+              <p className="text-blue-600 font-semibold text-lg transform rotate-180 [writing-mode:vertical-lr] ">
+                Testimonial
+              </p>
+              {/* Thin Vertical Line */}
+              <div className="w-[2px] h-64 bg-red-600 -mt-32 ml-12"></div>
             </div>
+            <Image src="/comma.svg" alt="comma" width={60} height={60} />
           </div>
         </div>
       </section>
