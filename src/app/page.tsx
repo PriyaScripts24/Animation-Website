@@ -775,17 +775,39 @@ export default function Home() {
       </section>
       {/* section12... */}
       <section>
-        <div className=" ">
-          <div className="flex items-start justify-start p-10  h-[500px] bg-gray-100 mt-10 flex-row">
-            <div className="relative flex flex-col items-center  justify-center mt-10">
-              {/* Vertical Text */}
-              <p className="text-blue-600 font-semibold text-lg transform rotate-180 [writing-mode:vertical-lr] ">
+        <div>
+          <div className="flex items-center justify-center p-20  h-[500px] bg-gray-100 mt-10 flex-row relative">
+            <div className="relative flex flex-col items-center  justify-center mt-10 ">
+              <p className="text-blue-600 font-semibold text-lg transform rotate-180 [writing-mode:vertical-lr]">
                 Testimonial
               </p>
-              {/* Thin Vertical Line */}
               <div className="w-[2px] h-64 bg-red-600 -mt-32 ml-12"></div>
             </div>
-            <Image src="/comma.svg" alt="comma" width={60} height={60} />
+
+            <div className="flex flex-col gap-8 px-40">
+              <Image src="/comma.svg" alt="comma" width={60} height={60} />
+              <p className="font-play font-[300px] text-gray-400 text-[24px]">
+                You Are Your Desires
+              </p>
+              <p className="font-play font-[500px] text-[30px]">
+                Very simply written, this slim volume draws from the author own
+                life and that of the people around her, to offer significant
+                insights into simple life philosophies. A touching book and one
+                that you will refer to again and again, especially when you need
+                guidance. It is for everyone.
+              </p>
+              <p className="font-play font-[400px] text-red-500 text-[22px]">
+                Sandhya Sridhar
+              </p>
+            </div>
+          </div>
+          <div className="flex absolute -mt-10 ml-[290px] gap-6">
+            <button className="font-play font-[400px] text-[24px] underline text-gray-500">
+              Pre
+            </button>
+            <button className="font-play font-[400px] text-[24px] underline ">
+              Next
+            </button>
           </div>
         </div>
       </section>
