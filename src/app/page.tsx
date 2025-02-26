@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import Image from "next/image";
 import Typing from "../../components/Typing";
 // import TestimonialSlider from "../../components/TestimonialSlider";
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 // import { title } from "process";
 export default function Home() {
@@ -116,8 +116,19 @@ export default function Home() {
       <div>
         {/* Other sections... */}
         <section>
-          <div className="flex justify-center mt-2">
-            <Image src="/logo.png" alt="logo" width={400} height={20} />
+          <div className="flex justify-center mt-2 ">
+            <Image
+              src="/logo-1.jpg"
+              alt="logo"
+              width={150}
+              height={150}
+              className="rounded-full"
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <p className="font-play text-[42px] font-bold italic ">
+              Aadhi Priya Tea
+            </p>
           </div>
           <div className="flex justify-end  gap-3 m-4">
             <p className="font-play font-[300px] text-[18px] -mt-2">Menu</p>
@@ -137,98 +148,58 @@ export default function Home() {
             <div className="flex gap-4">
               <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
               <p className="font-play font-[300px] text-[20px]">
-                Affiliate Faculty, University of Hawaii
+                White Tea – Light and delicate
               </p>
             </div>
             <div className="flex gap-4">
               <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
               <p className="font-play font-[300px] text-[20px]">
-                Visiting Scholar, MGR J2naki College of Arts and Science,
-                Chennai
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">
-                {" "}
-                Certified 500hr Yoga instructor
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Dancer</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Teacher</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Author</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">
-                Affiliate Faculty, University of Hawaii
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">
-                Visiting Scholar, MGR J2naki College of Arts and Science,
-                Chennai
+                Green Tea – Fresh and grassy
               </p>
             </div>
             <div className="flex gap-4">
               <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
               <p className="font-play font-[300px] text-[20px]">
                 {" "}
-                Certified 500hr Yoga instructor
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Dancer</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Teacher</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Author</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">
-                Affiliate Faculty, University of Hawaii
+                Oolong Tea – Semi-oxidized, between green and black
               </p>
             </div>
             <div className="flex gap-4">
               <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
               <p className="font-play font-[300px] text-[20px]">
-                Visiting Scholar, MGR J2naki College of Arts and Science,
-                Chennai
+                Black Tea – Fully oxidized and robust
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
+              <p className="font-play font-[300px] text-[20px]">
+                Pu-erh Tea – Aged and fermented
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
+              <p className="font-play font-[300px] text-[20px]">
+                Yellow Tea – Rare and slightly fermented{" "}
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
+              <p className="font-play font-[300px] text-[20px]">
+                Herbal Tea – Made from herbs, flowers, or fruits
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
+              <p className="font-play font-[300px] text-[20px]">
+                Rooibos Tea – Caffeine-free, from South Africa.
               </p>
             </div>
             <div className="flex gap-4">
               <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
               <p className="font-play font-[300px] text-[20px]">
                 {" "}
-                Certified 500hr Yoga instructor
+                Yerba Mate – Caffeinated herbal infusion from South America.
               </p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Dancer</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Teacher</p>
-            </div>
-            <div className="flex gap-4">
-              <p className="w-2 h-2 rounded-full border border-red-600 bg-red-600 mt-3"></p>
-              <p className="font-play font-[300px] text-[20px]">Author</p>
             </div>
           </div>
         </marquee>
@@ -285,7 +256,9 @@ export default function Home() {
             <div className="flex justify-center items-center gap-3 -mt-[240px]">
               <p className="w-3 h-3 rounded-full border border-red-600 bg-red-600 mt-3"></p>
               <div data-aos="fade-left">
-                <p className="text-[32px] font-play font-[400] ">Why I dance</p>
+                <p className="text-[32px] font-play font-[400] ">
+                  Why Do People Drink Tea
+                </p>
               </div>
             </div>
             <div className="flex justify-center flex-col items-start ">
@@ -328,19 +301,16 @@ export default function Home() {
               />
               <div className=" max-w-[500px]">
                 <p className="font-play font-[400] text-[22px]">
-                  For me, the expressive medium of Bharatanāṭyam combined with
-                  the ethical principles of yoga, enables a stronger, deeper and
-                  more expansive engagement with life and art.
-                </p>
-                <p className="font-play font-[400] text-[22px]">
-                  In the 38 years of my career as a teacher, I am driven to
-                  inspire and challenge every student potential for creativity.
-                </p>
-                <p className="font-play font-[400] text-[22px]">
-                  As a performer and researcher, I have been privileged to
-                  travel around the world, conduct workshops and present papers
-                  at conferences. The experiences, observances and interaction
-                  with fellow artists has helped my creative self to evolve.
+                  Tea is enjoyed worldwide for its health benefits, soothing
+                  properties, and cultural significance. Rich in antioxidants,
+                  it supports immunity, digestion, and heart health. With a mild
+                  caffeine boost, tea enhances focus without the jitters of
+                  coffee. Many drink it for relaxation, as herbal teas like
+                  chamomile and peppermint promote calmness. From Chinese tea
+                  ceremonies to Indian masala chai and British afternoon tea, it
+                  holds deep cultural value. With a wide range of flavors, from
+                  earthy green tea to spiced chai, tea remains a beloved
+                  beverage for both wellness and enjoyment. 🍵
                 </p>
               </div>
             </div>
@@ -796,7 +766,7 @@ export default function Home() {
         {/* section12... */}
       </div>
 
-      <ParallaxBanner>
+      <ParallaxProvider>
         <Parallax scale={[1, 0]}>
           <section>
             <div>
@@ -840,7 +810,7 @@ export default function Home() {
         <Parallax speed={-10}>
           <section>
             <div>
-              <div className="flex h-screen items-center justify-center p-20 bg-gray-100 mt-10 flex-row relative">
+              <div className="flex h-screen items-center justify-center p-20 bg-gray-100  flex-row relative">
                 <div className="relative flex flex-col items-center  justify-center mt-10 ">
                   <p className="text-blue-600 font-semibold text-lg transform rotate-180 [writing-mode:vertical-lr]">
                     Testimonial
@@ -877,7 +847,7 @@ export default function Home() {
             </div>
           </section>
         </Parallax>
-        <Parallax speed={-10}>
+        {/* <Parallax speed={-10}>
           <section>
             <div>
               <div className="flex h-screen items-center justify-center p-20  bg-red-100 mt-10 flex-row relative">
@@ -916,8 +886,8 @@ export default function Home() {
               </div>
             </div>
           </section>
-        </Parallax>
-      </ParallaxBanner>
+        </Parallax> */}
+      </ParallaxProvider>
     </div>
   );
 }

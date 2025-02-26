@@ -39,10 +39,10 @@ export default function AnimatedText() {
     <div className="wrapper">
       <p ref={typewriterRef} className="typewriter"></p>
       <p ref={splitTextRef} className="split-text">
-        I am a seeker of the knowledge and wisdom underpinning Indian dance
-        traditions. In weaving its spoken and unspoken elements I am empowered
-        to render universal significance to my poetic experience. Hence, I
-        dance.
+        People drink tea for its health benefits, gentle caffeine boost, and
+        relaxation. It is a part of many cultures, from Chinese ceremonies to
+        British afternoon tea. With endless flavors, tea is enjoyed for both
+        comfort and taste. 🍵
       </p>
     </div>
   );
