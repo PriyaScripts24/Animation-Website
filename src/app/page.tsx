@@ -333,8 +333,17 @@ export default function Home() {
           </div>
         </section>
         {/* section7... */}
-        <section className="bg-red-800 p-14 flex justify-center items-center mt-10 gap-8">
-          <div className="text-white text-center w-[550px] flex gap-16">
+        <section className="p-14 flex justify-center items-center mt-10 gap-8">
+          <div className="relative w-full">
+            <Image
+              src="/bg1.jpg"
+              alt="bg"
+              width={100}
+              height={100}
+              className="w-full object-cover h-[500px]"
+            />
+          </div>
+          <div className="text-white text-center w-[550px] flex gap-16 absolute -mt-20">
             <div>
               <Image
                 src="comma.svg"
@@ -347,14 +356,14 @@ export default function Home() {
             <div>
               <div data-aos="fade-left">
                 <div className="font-play font-[400] text-[42px]">
-                  Dance to me is an authentic expression of who I am and who I
+                  Tea, to me, is an authentic expression of who I am and who I
                   can become.
                 </div>
               </div>
-              <hr className="mt-5" />
+              <hr className="mt-5 border border-green-500" />
               <div data-aos="fade-righ  t">
                 <div className="font-play font-[400] text-[34px] mt-5">
-                  Anita Vallabh
+                  Aadhi Priya Tea
                 </div>
               </div>
             </div>
